@@ -897,7 +897,7 @@ void CLaserOdometry2D::PoseUpdate()
 	laser_oldpose = laser_pose;
 	math::CMatrixDouble33 aux_acu = acu_trans;
 	poses::CPose2D pose_aux_2D(acu_trans(0,2), acu_trans(1,2), kai_loc(2)/fps);
-    laser_pose = laser_pose + pose_aux_2D;
+    laser_pose = laser_pose + poses::CPose3D(pose_aux_2D);
 
 
 
